@@ -1,12 +1,12 @@
+export const isValid = (input, maxLength) => {
+  const regex = new RegExp(
+    `^(?!.*[\\s])(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!\"#\\$%&'()*+,-./:;<=>?@[\\]^_\`{|}~]).{1,${maxLength}}$`
+  );
+
+  return regex.test(input);
+};
+
 function App() {
-  const isValid = (input, maxLength) => {
-    const regex = new RegExp(
-      `^(?!.*[\\s])(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!\"#\\$%&'()*+,-./:;<=>?@[\\]^_\`{|}~]).{1,${maxLength}}$`
-    );
-
-    return regex.test(input);
-  };
-
   return (
     <div className="App">
       <div>"Passw0rd!", 10: {String(isValid("Passw0rd!", 10))}</div>
